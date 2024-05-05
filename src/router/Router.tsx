@@ -12,10 +12,20 @@ import MydataPage from '@/pages/mypage/MydataPage';
 import UpdateProfilePage from '@/pages/mypage/UpdateProfilePage';
 import InventoryPage from '@/pages/store/InventoryPage';
 import ShopPage from '@/pages/store/ShopPage';
+import SignIn from '@pages/sign/SignIn';
+import SignUp from '@/modal/SignUp';
 import { RouterProvider, createBrowserRouter, RouteObject, Navigate } from 'react-router-dom';
 
 const Router = () => {
   const routes: RouteObject[] = [
+    {
+      path: 'sign',
+      children: [
+        { path: '', element: <Navigate to="signup" /> },
+        { path: 'signin', element: <SignIn /> },
+        { path: 'signup', element: <SignUp /> },
+      ],
+    },
     {
       path: '/',
       element: <Layout />,
@@ -25,6 +35,7 @@ const Router = () => {
           index: true,
           element: <HomePage />,
         },
+
         {
           path: 'community',
           element: <Categorybar category="community" />,
