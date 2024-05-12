@@ -34,11 +34,14 @@ export default {
       purple: '#C06EF2',
       yellow: '#FCF898',
       green: '#8EFF9A',
+      transparent: 'transparent',
       error: '#F25454',
+      Ranking_Bar_Start: '#88A0E9',
+      Ranking_Bar_End: '#C7A4F4',
     },
-    backgroundImage: {
-      gradient: 'linear-gradient(0.25turn,#3F70DD, #B377F3)',
-    },
+    // backgroundImage: {
+    //   gradient: 'linear-gradient(0.25turn,#3F70DD, #B377F3)',
+    // },
 
     fontFamily: {
       pre: ['Pretendard'],
