@@ -1,11 +1,10 @@
 import { CharacterProfileIcon, CrownIcon, RankingBackground } from '@/assets/svg/community';
 import React from 'react';
-import { STAR_ICON_MAP } from './RankingConstant';
+import { STAR_ICON_MAP, IUser } from './RankingConstant';
 import { useDeviceSize } from '@/hooks/useDeviceSize';
-import { IRanking } from '@/api/community/Ranking.interface';
 
 interface PodiumProps {
-  rankers: IRanking[];
+  rankers: IUser[];
 }
 const Podium = ({ rankers }: PodiumProps) => {
   const { isDesktop } = useDeviceSize();
@@ -15,16 +14,16 @@ const Podium = ({ rankers }: PodiumProps) => {
       {rankers.slice(0, 3).map((user, rank) => (
         // idx를 이용해서 flex 아이템을 바꾸자
         <div
-          key={user.memberId}
+          key={user.nickname}
           className={'flex flex-col gap-3 items-center z-50' + (rank === 1 ? ' order-first' : '')}
         >
           <div className="flex flex-col w-12 items-center">
             {rank === 0 && <CrownIcon width="25" height="25" />}
             <p className="text-Light_Text_Name font-bold text-[0.625rem] dark:text-Dark_CategoryText_Icon">
-              {user.memberNickname}
+              {user.nickname}
             </p>
             <p className="bg-gradient-to-l bg-clip-text font-nico to-Ranking_Bar_End from-Ranking_Bar_Start text-transparent text-base">
-              {'+' + user.score}
+              {'+' + user.point}
             </p>
             <CharacterProfileIcon />
           </div>

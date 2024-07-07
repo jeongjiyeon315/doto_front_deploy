@@ -1,5 +1,6 @@
-import Friends from '@/components/community/friend/Friends';
+import Friends from '@/components/community/friend/FriendList';
 import SearchFriends from '@/components/community/friend/SearchFriends';
+// import FriendModal from '@/modal/FriendModal';
 import CommunityPageLayout from '@/components/community/CommunityPageLayout';
 import { useDeviceSize } from '@/hooks/useDeviceSize';
 import MenuBar from '@/components/community/friend/menuBar/MenuBar';
@@ -12,6 +13,7 @@ const FriendPage = () => {
     <CommunityPageLayout>
       {isDesktop && (
         <div className="flex gap-8">
+          {/* <FriendModal type="block" /> */}
           <SearchFriends />
           <Friends />
         </div>

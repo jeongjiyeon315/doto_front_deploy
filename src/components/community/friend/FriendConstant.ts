@@ -1,5 +1,11 @@
+export interface IMember {
+  status: number;
+  memberId: string;
+  nickname: string;
+}
+
 export const STATUS = {
-  FRIEND: 'FRIENDS',
-  NOT_FRIEND: 'NOT_FREIENS',
+  FRIEND: 0,
+  UNFOLLOW: 1,
   WAIT: 2,
 };
