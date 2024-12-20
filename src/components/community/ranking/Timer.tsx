@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { TimerIcon } from '@/assets/svg/community';
 import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
@@ -11,7 +10,6 @@ const Timer = () => {
 
   // TODO: 타이머 로직 보완 필요: useInterval 사용
   useEffect(() => {
-    console.log(restSec);
     setInterval(() => {
       setRestSec(dayjs.duration(dayjs().endOf('w').add(1, 'd').diff(dayjs())));
     }, 1000);
